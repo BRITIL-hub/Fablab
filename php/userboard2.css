@@ -1,0 +1,146 @@
+/* Body styling to ensure full height and centered content */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    flex-direction: column; /* Stack header and main content vertically */
+
+}
+
+/* Wrapper for the dashboard content */
+.dashboard-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    width: 80%;
+    max-width: 800px; /* Max width to avoid it stretching too much */
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table Header Styling */
+th {
+    background-color: #0f007c; /* Navbar primary color */
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Table Body Styling */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* Profile container */
+.profile-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Profile picture */
+.profile-container .profile-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* User details */
+.profile-container .user-details {
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.profile-container .user-details h2 {
+    color: #0f007c; /* Primary color */
+    margin-bottom: 15px;
+}
+
+.profile-container .user-details p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.profile-container .user-details .label {
+    font-weight: bold;
+    color: #153eab; /* Accent color */
+}
+
+/* Button for editing profile */
+.profile-container .edit-btn {
+    background-color: #0f007c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-container .edit-btn:hover {
+    background-color: #153eab; /* Hover color */
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%; /* Ensures full-width alignment within form */
+    max-width: 400px; /* Optional: sets max width for smaller form size */
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 20px;
+}
+
+#editProfileForm label, 
+#editProfileForm button {
+    margin: 10px 0;
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .dashboard-container {
+        width: 80%;
+        margin-top: 80px; /* Account for fixed navbar */
+    }
+}
+

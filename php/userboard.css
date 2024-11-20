@@ -1,0 +1,370 @@
+body {
+    background: rgb(125,182,220);
+background: linear-gradient(360deg, rgba(125,182,220,1) 0%, rgba(172,212,238,1) 35%, rgba(230,245,255,1) 100%);
+font-family: "Poppins", sans-serif;
+    position: relative;
+    width: 100%;
+    height: 120vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    text-align: center;
+    max-height: 100vh; /* Maximum height to fit within the viewport */
+    overflow-y: auto;
+}
+
+h1 {
+    color: white;
+    font-size: 92%;
+}
+h2{
+    padding-top: 3%;
+    color: #1848c6;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+}
+
+#modalTitle{
+    font-size: 1.5rem;
+}
+
+.name{
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 1rem;
+    color: #080046;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    width: 300px;
+    padding-top: -50px;
+}
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #e6f5ff;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+  }
+  
+  .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #1848c6;
+    transition: 0.5s;
+    font-size: 1.1rem;
+    margin-left: 20px;
+  }
+  
+  .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+button {
+    padding: 10px 15px;
+    background-color: #1848c6;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transform: translateY(-15px);
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 20px;
+}
+
+.machine-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 15px;
+    padding-left: 10%; /* Adjust padding as needed */
+    padding-right: 10%;
+    margin-top: -10px;
+    padding-bottom: 20px;
+}
+
+
+.machine {
+    padding: 5px;
+    text-shadow: 0 1px 0 #eee;
+    background: #f0f7fb;
+    color: #e6f5ff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    width:90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.machine img {
+    width: 100%; /* Full width */
+    height: auto;
+    border-radius: 50px;
+    margin-bottom: -5px;
+    margin-top: 10px;
+    max-width: 200px; /* Enlarge image size */
+    max-height: 200px; /* Maintain aspect ratio */
+    padding: 2%;
+    border-style: solid;
+    border-color: #1848c6;
+}
+
+.machine p {
+    color: #1848c6;
+    font-weight: bold;
+}
+
+.machine:hover {
+    -webkit-box-shadow: inset 0 1px 1px #888, inset 0 8px 16px -4px #888, inset 0 -1px 1px #888;
+    border-color: #888 #aaa #eee;
+    cursor: pointer;
+    transform: translateY(0.5%);
+}
+
+/*For unavailable machines*/
+.machine.unavailable img {
+    filter: grayscale(100%);
+    pointer-events: none; /* Makes the machine unclickable */
+}
+
+.machine-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Adds a shadow for better visibility */
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: Adds a background color for better contrast */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.unavailable-name {
+    color: #888 !important; /* Force gray color */
+    text-decoration: line-through; /* Optional: Strike-through effect */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.618); /* Black w/ opacity */
+    
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Max width for larger screens */
+    border-radius: 25px; /* Rounded corners */
+    transform: translateY(-50px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Navigation bar */
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    overflow: hidden;
+    padding: 20px 95px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.topnav a {
+    color: #f0f7fb;
+    text-align: center;
+    padding: 12px 18px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-right: 5px;
+    background-color: #1848c6; ;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topnav a:hover {
+    background-color: #4d84e2;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.right-links {
+    margin-left: auto;
+}
+
+.topnav a.split {
+    color: #1848c6;
+    background-color: #e6f5ff;
+}
+
+.topnav a.split:hover {
+    background-color: #080046;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide the nav links and display icon on mobile */
+.icon {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transform: translateX(0); /* Adjust as needed */
+  }
+
+  /* Tooltip style */
+.profile-picture-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0;
+}
+
+/* Ensure profile picture container has relative positioning */
+.profile-picture-container {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+    /* Navigation Bar - Stack items vertically */
+    .topnav a {
+        display: none; /* Hide links */
+    }
+    .topnav .icon {
+        display: block; /* Show hamburger */
+    }
+    /* When navbar has 'responsive' class, show items in block view */
+    .topnav.responsive a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 5px;
+
+    }
+    .topnav.responsive {
+        flex-direction: column;
+        background: #1849c63b;
+
+    }
+
+    /* Machine Container - Single column on smaller screens */
+    .machine-container {
+        grid-template-columns: 1fr; /* Single column */
+        padding: 10px;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        width: 90%; /* More width on small screens */
+        padding: 15px;
+    }
+
+    /* Adjust Machine Image Size */
+    .machine img {
+        max-width: 150px; /* Reduce image size on small screens */
+        max-height: 150px;
+    }
+    .topnav .icon {
+        display: block;
+        margin-left: auto;
+        font-size: 24px;
+        color: #1848c6; /* Choose a contrasting color */
+
+    }
+    h2{
+        padding-top: 13%;
+    }
+    
+}

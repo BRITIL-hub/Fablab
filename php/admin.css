@@ -1,0 +1,325 @@
+/* Global Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    background: rgb(125,182,220);
+    background: linear-gradient(360deg, rgba(125,182,220,1) 0%, rgba(172,212,238,1) 35%, rgba(230,245,255,1) 100%);
+}
+h2{
+    margin-bottom: 15px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
+
+.sidebar-header h1 {
+    font-size: 24px;
+    color: #1848c6;
+    margin-bottom: 30px;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #1848c6;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    background-color: #f0f0f0;
+    color: #1848c6;
+}
+
+.nav-link.active {
+    background-color: #f3f4f6;
+    border-left: 4px solid #3b82f6;
+}
+
+.nav-link i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.logout {
+    margin-top: auto;
+    color: #dc3545;
+}
+
+/* Main Content Area */
+main {
+    margin-left: 250px;
+    padding: 30px;
+    width: calc(100% - 250px);
+}
+
+/* Header and Content Section */
+.header, .content-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #0a1c4b;
+}
+
+p{
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #1848c6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 10px auto;
+}
+/* Container for the buttons */
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+    justify-content: flex-start; /* Align buttons to the left */
+}
+
+/* Update Machine button */
+#updateMachineBtn {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Delete Machine button */
+#deleteMachineBtn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Action Buttons */
+
+.button, td a {
+    padding: 8px 16px;
+    background-color: #1848c6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover, td a:hover {
+    background-color: #2563eb;
+}
+
+td a[href*="delete"] {
+    background-color: #dc3545;
+}
+
+td a[href*="delete"]:hover {
+    background-color: #bb2d3b;
+}
+
+/* Machine and Modal Styles */
+.machine-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.machine {
+    margin: 10px;
+    text-align: center;
+}
+
+.machine img {
+    width: 250px;
+    height: auto;
+    border-radius: 25px;
+    padding: 5px;
+    border: white solid 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    position: relative; /* Ensure positioning context for the close button */
+    border-radius: 25px;
+}
+
+
+.close {
+    position: absolute; /* Position the close button outside the flex layout */
+    top: 10px; /* Adjust distance from the top */
+    right: 10px; /* Adjust distance from the right */
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-machine-btn {
+    position: fixed; /* Fix the button's position relative to the viewport */
+    top: 20px; /* Adjust the distance from the top of the page */
+    right: 20px; /* Adjust the distance from the right edge */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: white 8px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000; /* Ensure the button appears on top of other elements */
+}
+
+.add-machine-btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    main {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    td a {
+        padding: 4px 8px;
+        font-size: 13px;
+    }
+}
+/* Global Button Styling */
+.button, td a{
+    display: inline-block; /* Make buttons inline-block to control alignment */
+    padding: 8px 16px;
+    background-color: #1848c6;
+    margin-right: 5px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center; /* Ensure text is centered within buttons */
+}
+
+/* Centering buttons in their container */
+.nav-links, .machine-container, .modal-content {
+    display: flex;
+    justify-content: center; /* Align children (buttons) to center */
+    gap: 10px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+}
+
+.button:hover, td a:hover{
+    background-color: #2563eb;
+}
+
+td a[href*="delete"] {
+    background-color: #dc3545;
+}
+
+td a[href*="delete"]:hover {
+    background-color: #bb2d3b;
+}
+    
+/* Specific Container Adjustments */
+.machine-container {
+    justify-content: center; /* Center machines in the container */
+}
+
