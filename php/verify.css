@@ -1,0 +1,112 @@
+/* Style for the entire body */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-image: url(../images/cover2.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#toplogo {
+    display: block; 
+    max-height: 250px;
+    max-width: 220px;
+    width: 100%;  
+    height: 100%;  
+    margin: 0 auto;
+    margin-bottom: -3%;
+    margin-top: -26%;
+  }
+
+/* Apply fade-in animation to the form container */
+form {
+    background-color: #e6f5ffb7;
+    padding: 2%;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0px 0px 35px 9px rgba(2,17,57,1);
+    border-radius: 50px;
+    text-align: center;
+    margin-top: 10%;
+    opacity: 0; /* Initial state for animation */
+    animation: fadeIn 0.5s ease-in-out forwards; /* 0.5s duration */
+}
+
+/* Define fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Optional: adds a slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Style for the input fields */
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 15px auto; /* Centers the input field */
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 40px 1fr; /* Adjusts width for icon and input */
+    padding: 0 0.5rem;
+    align-items: center; /* Centers icon and input vertically */
+    position: relative;
+}
+
+/* Style for the icon inside input field */
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.1rem;
+}
+
+/* Style for the input elements */
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    padding-left: 10px; /* Adds spacing between icon and text */
+}
+
+.input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+
+/* Style for the button */
+button {
+    width: 150px;
+    background-color: #1848c6;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 20px auto; /* Centers the button */
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* Hover effect for the button */
+button:hover {
+    background-color: #4e7df5;
+}
