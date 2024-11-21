@@ -1,5 +1,5 @@
 <?php
-$database = new mysqli("localhost", "root", "", "fabrication_lab");
+$database = new mysqli("fablab", "root", "Css@12345", "fabrication_lab");
 
 // Check connection
 if ($database->connect_error) {
